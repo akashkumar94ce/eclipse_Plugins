@@ -1,0 +1,25 @@
+Bundle-ManifestVersion: 2
+Bundle-Name: AI Assistant
+Bundle-SymbolicName: com.company.aiassistant;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Activator: com.company.aiassistant.Activator
+Bundle-Vendor: Company
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.jface,
+ org.eclipse.swt,
+ org.eclipse.ui.ide,
+ org.eclipse.core.resources,
+ org.eclipse.ui.editors;bundle-version="3.8.100",
+ org.eclipse.text;bundle-version="3.5.300",
+ org.eclipse.jface.text;bundle-version="3.8.101",
+ org.eclipse.jdt.core;bundle-version="3.9.2",
+ org.eclipse.jdt.ui;bundle-version="3.9.2"
+Bundle-ClassPath: .,
+ lib/httpclient-4.5.14.jar,
+ lib/httpcore-4.4.16.jar,
+ lib/commons-logging-1.2.jar,
+ lib/commons-codec-1.15.jar,
+ lib/gson-2.8.9.jar
+

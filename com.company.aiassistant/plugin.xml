@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="Sample Category"
+            id="com.company.aiassistant">
+      </category>
+      <view
+            name="AIChatView"
+            icon="icons/sample.gif"
+            category="com.company.aiassistant"
+            class="com.company.aiassistant.views.AIChatView"
+            id="com.company.aiassistant.views.AIChatView">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <view
+               ratio="0.5"
+               relative="org.eclipse.ui.views.ProblemView"
+               relationship="right"
+               id="com.company.aiassistant.views.AIChatView">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.help.contexts">
+      <contexts
+            file="contexts.xml">
+      </contexts>
+   </extension>
+   
+   <extension
+      point="org.eclipse.core.runtime.preferences">
+   <initializer
+         class="com.company.aiassistant.preferences.PreferenceInitializer">
+   </initializer>
+</extension>
+
+<extension
+      point="org.eclipse.ui.preferencePages">
+
+   <page
+         category="org.eclipse.ui.preferencePages.Workbench"
+         class="com.company.aiassistant.preferences.AIPreferencePage"
+         id="com.company.aiassistant.preferences"
+         name="AI Assistant">
+   </page>
+
+</extension>
+
+<extension
+      point="org.eclipse.ui.startup">
+   <startup
+         class="com.company.aiassistant.Startup">
+   </startup>
+</extension>
+
+<extension
+      point="org.eclipse.ui.commands">
+
+   <command
+         id="com.company.aiassistant.commands.explain"
+         name="Explain Code">
+   </command>
+   
+   <command
+      id="com.company.aiassistant.commands.improve"
+      name="Improve Code">
+</command>
+
+<command
+      id="com.company.aiassistant.commands.fixbug"
+      name="Fix Bug">
+</command>
+
+<command
+      id="com.company.aiassistant.commands.generate"
+      name="Generate Code">
+</command>
+
+</extension>
+
+<extension
+      point="org.eclipse.ui.handlers">
+
+   <handler
+         class="com.company.aiassistant.handlers.ExplainCodeHandler"
+         commandId="com.company.aiassistant.commands.explain">
+   </handler>
+   
+   <handler
+      class="com.company.aiassistant.handlers.ImproveCodeHandler"
+      commandId="com.company.aiassistant.commands.improve">
+</handler>
+
+<handler
+      class="com.company.aiassistant.handlers.FixBugHandler"
+      commandId="com.company.aiassistant.commands.fixbug">
+</handler>
+
+<handler
+      class="com.company.aiassistant.handlers.GenerateCodeHandler"
+      commandId="com.company.aiassistant.commands.generate">
+</handler>
+
+</extension>
+
+<extension
+      point="org.eclipse.ui.menus">
+
+   <menuContribution
+         locationURI=
+         "popup:org.eclipse.ui.popup.any?after=additions">
+
+      <command
+            commandId=
+            "com.company.aiassistant.commands.explain"
+            label=
+            "Explain Code"
+            style=
+            "push">
+      </command>
+      
+      <command
+      commandId="com.company.aiassistant.commands.improve"
+      label="Improve Code"
+      style="push">
+</command>
+
+<command
+      commandId="com.company.aiassistant.commands.fixbug"
+      label="Fix Bug"
+      style="push">
+</command>
+
+<command
+      commandId="com.company.aiassistant.commands.generate"
+      label="Generate Code"
+      style="push">
+</command>
+
+   </menuContribution>
+
+</extension>
+
+</plugin>
