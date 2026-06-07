@@ -1,0 +1,16 @@
+# Eclipse
+.metadata/
+
+# Java
+*.class
+
+# Build output
+bin/
+target/
+
+# Maven
+.mvn/
+
+# OS
+.DS_Store
+Thumbs.db
