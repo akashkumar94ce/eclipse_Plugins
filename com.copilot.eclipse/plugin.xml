@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <!-- Preference Page Registration -->
+   <extension point="org.eclipse.ui.preferencePages">
+      <page
+            class="com.copilot.preferences.CopilotPreferencePage"
+            id="com.copilot.preferences.CopilotPreferencePage"
+            name="AI Co-pilot Configuration">
+      </page>
+   </extension>
+   <extension point="org.eclipse.core.runtime.preferences">
+      <initializer class="com.copilot.preferences.PreferenceInitializer"/>
+   </extension>
+
+   <!-- View Registration -->
+   <extension point="org.eclipse.ui.views">
+      <category
+            id="com.copilot.view.category"
+            name="AI Co-pilot">
+      </category>
+      <view
+            category="com.copilot.view.category"
+            class="com.copilot.views.CopilotView"
+            id="com.copilot.views.CopilotView"
+            name="Co-pilot Chat Window"
+            icon="icons/sample.gif">
+      </view>
+   </extension>
+
+</plugin>
